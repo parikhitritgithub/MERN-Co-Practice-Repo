@@ -13,7 +13,14 @@ export default function Username() {
             </div>
 
             <form className='py-1'>
-              <div className='bg-blue-400'></div>
+              <div className='bg-blue-400 flex  justify-center  py-4 '>
+                <img src="" alt="AVTAR" />
+              </div>
+
+              <div className='textbook'>
+                <input type="text" placeholder='username' />
+                <button type='submit'>Let's Go </button>
+              </div>
             </form>
 
 
