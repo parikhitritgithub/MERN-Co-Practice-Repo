@@ -1,21 +1,21 @@
-import toast from "react-hot-toast";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
-export async function UsernameValidate (values) {
-    const errors = UsernameVerify({} , values)
-
+export async function UsernameValidate(values){
+    const errors = usernameVerify({}, values)
 
     return errors ;
 }
 
-
-
-function UsernameVerify (error ={} , values) {
+function  usernameVerify(error={}, values ){
     if(!values.username) {
-        error.username = toast.error('username required .... ')
-    } else if (values.username.include(" ")) {
-        error.username = toast.error('invalid username ...')
+        error.username = "username required ...";
+        toast.error("username required ...");
+    }else if (values.username.includes(" ")){
+        error.username = 'invalid username ...';
+        toast.error('invalid username ...');
     }
+
     return error ;
 }
