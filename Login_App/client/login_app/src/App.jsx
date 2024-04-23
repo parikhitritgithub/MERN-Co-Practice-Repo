@@ -17,7 +17,7 @@ const router = createBrowserRouter([
 
   {
       path : '/' , 
-      element : <Username></Username>
+      element : <Username/>
   } ,
   {
       path : '/register' , 
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   } ,
   {
       path : '/password' , 
-      element : <Password></Password>
+      element : <Password/>
   } ,
   {
       path : '/profile' , 

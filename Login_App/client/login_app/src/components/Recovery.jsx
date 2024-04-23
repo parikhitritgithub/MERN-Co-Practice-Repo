@@ -21,7 +21,7 @@ export default function Recovery () {
             <span className='py-4 text-sm '>
               Enter 6 digit OTP send to your email address.
             </span>
-            <input type="text" placeholder='Password'
+            <input type="text" placeholder='OTP'
             className=' rounded-lg w-full h-8 focus:outline-none  font-Nunito Sans transition duration-500  hover:scale-105 text-center '
             />
             </div>
