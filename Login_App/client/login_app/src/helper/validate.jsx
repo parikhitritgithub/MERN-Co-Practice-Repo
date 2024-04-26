@@ -1,19 +1,46 @@
 import toast, { Toaster } from 'react-hot-toast';
 
 
-
+// username validation 
 export async function UsernameValidate(values){
     const errors = usernameVerify({}, values)
 
     return errors ;
 }
 
+
+// password validation 
 export async function PasswordValidate(values) {
     const errors = PasswordVerify({} , values)
 
     return errors ; 
 }
 
+// register validation 
+export async function RegisterValidation(values) {
+    const errors = usernameVerify({} , values) 
+    PasswordVerify({} , errors )
+    EmailVerify({} , errors)
+
+
+    return errors ;
+}
+
+
+
+
+// reset password validation 
+export async function ResetPasswordValidation (values) {
+    const error = PasswordVerify({} , values);
+    if(values.Password != values.confirm_pwd) {
+        error.exist = toast.error("Password Not Match")
+    }
+
+    return errors ;
+}
+
+
+// massage popup for password 
 
 function PasswordVerify(error={}, values) {
 
@@ -37,6 +64,9 @@ function PasswordVerify(error={}, values) {
     return error ;
 }
 
+
+
+// massage popup for username error  
 function  usernameVerify(error={}, values ){
     if(!values.username) {
         error.username = "username required ...";
@@ -49,4 +79,22 @@ function  usernameVerify(error={}, values ){
     }
 
     return error ;
+}
+
+//email popup 
+function EmailVerify(error={} , values ) {
+
+    const specialChars = /[!@#$%^&*()/\?''>""<,.+-_{}]/;
+
+    if(!values.Email){
+        error.Email = 'Email required ' ;
+        toast.error = 'Email required '
+    } else if (values.Email.include(" ")) {
+        error.Email = 'Wrong Email...' ;
+        toast.error = 'Wrong Email...' ; 
+    } else if (!specialChars.text(values.Email)) {
+        error.Email = 'Invalid Email ... ' ;
+        toast.Email = 'Invalid Email ... ' ;
+    }
+    return error
 }

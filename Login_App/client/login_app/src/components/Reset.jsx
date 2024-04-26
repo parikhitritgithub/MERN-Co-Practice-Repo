@@ -2,16 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik'
 import { Toaster } from 'react-hot-toast';
-import { PasswordValidate } from '../helper/validate';
+import { ResetPasswordValidation } from '../helper/validate';
 
 
 export default function Reset() {
 
   const formik = useFormik({
     initialValues: {
-      Password: ''
+      Password: 'admin@123',
+      confirm_pwd : ''
     },
-    validate: PasswordValidate,
+    validate: ResetPasswordValidation,
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async values => {
@@ -34,7 +35,7 @@ export default function Reset() {
             <input {...formik.getFieldProps('Password')} type="text" placeholder='New Password'
               className=' rounded-lg w-full h-8 focus:outline-none  font-Nunito Sans transition duration-500  hover:scale-105 text-center  '
             />
-            <input {...formik.getFieldProps('Password')} type="text" placeholder='Repeat Password'
+            <input {...formik.getFieldProps('confirm_pwd')} type="text" placeholder='Repeat Password'
               className=' mt-7 rounded-lg w-full h-8 focus:outline-none  font-Nunito Sans transition duration-500  hover:scale-105 text-center  '
             />
             <button type='submit' className='bg-yellow-300  py-1 rounded-md mt-7 border-solid border-2 border-sky-500 w-full '>Sign In </button>
