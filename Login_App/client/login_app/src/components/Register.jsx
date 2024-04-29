@@ -11,6 +11,7 @@ export default function Reset() {
     initialValues: {
       Email :'',
       username : '',
+
       Password : ''
     },
     validate: RegisterValidation ,
@@ -29,7 +30,7 @@ export default function Reset() {
         <div className='flex flex-col justify-center items-center w-2/4 h-2/6'>
           <h4 className='text-3xl py-1'>Register</h4>
           <h1> explore more </h1>
-          <h1> By connecting with us </h1>
+          <h1> By connecting with us  thanq  </h1>
 
         </div>
         <div className=' flex flex-col items-center justify-center w-2/4 h-3/6 py-3 '>
