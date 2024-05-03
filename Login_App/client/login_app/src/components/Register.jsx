@@ -33,6 +33,7 @@ export default function Reset() {
           <h1> By connecting with us  thanq  </h1>
 
         </div>
+        
         <div className=' flex flex-col items-center justify-center w-2/4 h-3/6 py-3 '>
           <form className='flex flex-col items-center justify-center py-3 ' onSubmit={formik.handleSubmit}>
             <input {...formik.getFieldProps('Email')} type="text" placeholder='Email*'
