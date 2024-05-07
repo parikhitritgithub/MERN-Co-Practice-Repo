@@ -49,7 +49,7 @@ export default function Reset() {
             />
             <button type='submit' className='bg-yellow-300  py-1 rounded-md mt-7 border-solid border-2 border-sky-500 w-full '>Sign In </button>
 
-            <span className='py-2 mt-2'>Not a member ! <Link to="/register" className='text-red-500'>Register Now </Link></span>
+            <span className='py-2 mt-2'>Not a member |  <Link to="/register" className='text-red-500'>Register Now </Link></span>
           </form>
         </div>
 
