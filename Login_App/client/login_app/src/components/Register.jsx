@@ -8,7 +8,9 @@ import {RegisterValidation} from '../helper/validate';
 export default function Reset() {
 
   const formik = useFormik({
+    
     initialValues: {
+      
       Email :'',
       username : '',
 
